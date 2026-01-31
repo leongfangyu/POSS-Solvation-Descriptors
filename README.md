@@ -40,14 +40,11 @@ This repository contains Python scripts for the combinatorial generation of poly
 > pip install pandas openpyxl
 
 ## Usage
-Step 1: Generate POSS ΔG data
-> python readsolventdata.py
-
-Step 2: Aggregate component quantities
-> python unify.py
+Step 1: Aggregate POSS component quantities
+> python main2.py
 
 Step 3: Query the dataset interactively
-> python findPOSS.py
+> python extract.py
 
 
 > [!NOTE]

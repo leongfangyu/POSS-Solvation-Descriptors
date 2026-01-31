@@ -4,16 +4,17 @@ This repository contains Python scripts for the combinatorial generation of poly
 
 ## Workflow overview
 
-1. `main2.py` — Data aggregation  
-   - Reads all `*_result.csv` files  
-   - Converts component lists into explicit component-count features  
-   - Produces a unified dataset (`component_quantities*.csv`)
+1. **`main2.py` — Data aggregation and feature construction**
+   - Reads solvent-specific result files (`*_result.csv`)
+   - Converts POSS component lists into explicit cage and substituent counts
+   - Produces a unified tabular dataset (`component_quantities*.csv`)
+   - Output is suitable for regression, screening, and data-driven modeling
 
-2. `extract.py` — ΔG query and partition analysis  
-   - Interactive script  
-   - Allows users to select cage size and substituent quantities  
-   - Retrieves ΔG values from the aggregated dataset  
+2. **`extract.py` — Interactive ΔG lookup and log P calculation**
+   - Queries the aggregated dataset for user-defined POSS compositions
+   - Returns ΔG values with an empirical correction factor
    - Optionally computes solvent–solvent partition coefficients (log P)
+   - Designed for exploratory and interpretive analysis
 
 
 

@@ -30,6 +30,13 @@ This repository contains Python scripts for the combinatorial generation of poly
    - Designed for exploratory and interpretive thermodynamic analysis
 
 
+### Electrostatic energy scaling (recommended)
+
+During data aggregation, an optional empirical scaling factor can be applied to the electrostatic energy contribution (SumEsValues).
+
+Based on experimental validation reported in our [paper](https://doi.org/10.1016/j.gce.2024.10.009), a scaling factor of **0.75** for SumEsValues was found to provide improved agreement between predicted and experimental partition coefficients. Unless otherwise stated, users are recommended to adopt a scaling factor of **0.75** when generating aggregated datasets for quantitative analysis.
+
+
 
 ## Requirements
 - Python 3.8 or later

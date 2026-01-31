@@ -3,23 +3,33 @@ This repository contains Python scripts for the combinatorial generation of poly
 
 
 ## Workflow overview
-1. readsolventdata.py
 
-Reads descriptor data from an Excel file (one sheet per solvent)
-Enumerates all valid POSS compositions for T8, T10, and T12 cages
-Computes ΔG = ΣEs + ΣNes for each structure
-Outputs solvent-specific CSV files (*_result.csv)
+1. readsolventdata.py
+   - Reads descriptor data from an Excel file (one sheet per solvent)
+   - Computes ΔG = ΣEs + ΣNes for each structure
+   - Outputs solvent-specific CSV files (*_result.csv)
 
 2. unify.py
-
-Reads all *_result.csv files
-Converts component lists into explicit component counts
-Produces a unified dataset (component_quantities*.csv)
+   - Reads all *_result.csv files
+   - Converts component lists into explicit component counts
+   - Produces a unified dataset (component_quantities*.csv)
 
 3. findPOSS.py
+   - Interactive script
+   - Allows users to select cage size and substituent quantities
+   - Queries the aggregated dataset to retrieve ΔG and descriptor values
 
-Interactive script
-Allows users to select cage size and substituent quantities
-Queries the aggregated dataset to retrieve ΔG and descriptor values
+
+## Requirements
+- Python 3.8 or later
+* pandas
++ openpyxl
+
+## Installation
+> pip install pandas openpyxl
+
+
+
+
 
 

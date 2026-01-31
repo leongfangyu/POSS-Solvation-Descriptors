@@ -4,20 +4,24 @@ This repository contains Python scripts for the combinatorial generation of poly
 
 ## Workflow overview
 
-1. `readsolventdata.py`
-   - Reads descriptor data from an Excel file (one sheet per solvent)
-   - Computes ΔG = ΣEs + ΣNes for each structure
-   - Outputs solvent-specific CSV files (*_result.csv)
+1. `main1.py` — ΔG generation  
+   - Reads descriptor data from an Excel file (one sheet per solvent)  
+   - Enumerates POSS cage–substituent compositions  
+   - Computes ΔG using an additive model:  
+     ΔG = ΣEs + ΣNes  
+   - Outputs solvent-specific CSV files (`*_result.csv`)
 
-2. `unify.py`
-   - Reads all *_result.csv files
-   - Converts component lists into explicit component counts
-   - Produces a unified dataset (component_quantities*.csv)
+2. `main2.py` — Data aggregation  
+   - Reads all `*_result.csv` files  
+   - Converts component lists into explicit component-count features  
+   - Produces a unified dataset (`component_quantities*.csv`)
 
-3. `findPOSS.py`
-   - Interactive script
-   - Allows users to select cage size and substituent quantities
-   - Queries the aggregated dataset to retrieve ΔG and descriptor values
+3. `extract.py` — ΔG query and partition analysis  
+   - Interactive script  
+   - Allows users to select cage size and substituent quantities  
+   - Retrieves ΔG values from the aggregated dataset  
+   - Optionally computes solvent–solvent partition coefficients (log P)
+
 
 
 ## Requirements
@@ -45,19 +49,20 @@ Step 3: Query the dataset interactively
 > Descriptor values must be supplied by the user.
 
 ## Citation
-If you use this code in academic work, please cite or acknowledge the authors accordingly.
-<https://doi.org/10.1016/j.gce.2024.10.009/>
+If this work is helpful for your research, please cite [Interaction mechanisms of POSS-based adsorbents with VOCs, CO2, CH4, and H2O: Theoretical insights and prediction method
+](https://doi.org/10.1016/j.gce.2024.10.009).
+
+
 
 ### BibTex
+If this work is helpful for your research, please consider citing the following BibTeX entry.
+
+```
 @article{leong2024interaction,
   title={Interaction mechanisms of POSS-based adsorbents with VOCs, CO2, CH4, and H2O: Theoretical insights and prediction method},
   author={Leong, Fang Yu and Low, Liang Ee and Chew, Irene Mei Leng},
   journal={Green Chemical Engineering},
   year={2024},
-  publisher={Elsevier}
+  publisher={Elsevier},
 }
-
-
-
-
 

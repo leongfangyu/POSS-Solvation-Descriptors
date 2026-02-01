@@ -32,6 +32,14 @@ This repository contains Python scripts for the combinatorial generation of poly
    - Optionally computes solvent–solvent partition coefficients (log P)
    - Designed for exploratory and interpretive thermodynamic analysis
 
+3. **`scripts/extract_SMD.sh` — Extraction of SMD results from Gaussian 16 outputs**
+   - Scans all Gaussian 16 output files (`*.out`) in the current directory
+   - Extracts SMD solvation free-energy components, including:
+     - ΔG<sub>solv</sub>
+     - electrostatic and non-electrostatic contributions
+     - cavity surface area and cavity volume
+   - Writes both human-readable (`output.txt`) and machine-readable (`output.csv`) summaries
+   - Intended for preprocessing and validation of quantum-chemistry reference data
 
 ### Electrostatic energy scaling (recommended)
 

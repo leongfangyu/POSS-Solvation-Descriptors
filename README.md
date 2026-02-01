@@ -87,7 +87,7 @@ python aggregate.py
 python extract.py
 ```
 
-### Step 3 (optional): Reproduce Fig. 6 parity plot (validation)
+### Optional: Reproduce Fig. 6 parity plot (validation)
 Reproducing Fig. 6 requires the user to construct a `parity.csv` file manually.
 This file is **not provided** in the repository because it depends on user-generated quantum chemistry results.
 
@@ -102,6 +102,20 @@ The required `parity.csv` must contain **two columns**:
 ```bash
 cd scripts
 python plot_fig6_parity.py
+```
+
+### Optional: Extract SMD reference data from Gaussian 16 outputs
+
+For users who perform their own Gaussian 16 calculations with the SMD implicit
+solvent model, the repository provides a shell script to extract solvation
+free-energy components directly from Gaussian output files.
+
+To use this script:
+
+```bash
+cd scripts
+chmod +x extract_SMD.sh
+./extract_SMD.sh
 ```
 
 > [!NOTE]

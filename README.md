@@ -35,9 +35,24 @@ This repository contains Python scripts for the combinatorial generation of poly
 
 ### Electrostatic energy scaling (recommended)
 
-During data aggregation, an optional empirical scaling factor can be applied to the electrostatic energy contribution (SumEsValues).
+During data aggregation, an optional empirical scaling factor can be applied to the electrostatic energy contribution (SumEsValues). Based on experimental validation reported in our [paper](https://doi.org/10.1016/j.gce.2024.10.009), a scaling factor of **0.75** for SumEsValues was found to provide improved agreement between predicted and experimental partition coefficients. Unless otherwise stated, users are recommended to adopt a scaling factor of **0.75** when generating aggregated datasets for quantitative analysis.
 
-Based on experimental validation reported in our [paper](https://doi.org/10.1016/j.gce.2024.10.009), a scaling factor of **0.75** for SumEsValues was found to provide improved agreement between predicted and experimental partition coefficients. Unless otherwise stated, users are recommended to adopt a scaling factor of **0.75** when generating aggregated datasets for quantitative analysis.
+### Input data availability (required)
+
+The usage of **`aggregate.py`** requires a complete set of solvent-specific result files in the form of:
+These files are **not stored directly in this repository** due to their size.  
+All required `_result.csv` files can be downloaded from the following Google Drive folder:
+
+👉 **Download link:**  
+https://drive.google.com/drive/folders/1wvTEkxSdcAfQ0RCoQuKzsjw7KjPtImRR
+
+Before running `aggregate.py`, users must:
+
+1. Download all `_result.csv` files from the Google Drive link above  
+2. Place all downloaded files in the **same directory as `aggregate.py`**
+
+The aggregation script automatically scans the current directory and processes all files matching the pattern `_result.csv`.
+
 
 
 

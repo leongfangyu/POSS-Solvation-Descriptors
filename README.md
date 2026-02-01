@@ -81,8 +81,7 @@ python extract.py
 
 ### Step 3 (optional): Reproduce Fig. 6 parity plot (validation)
 Reproducing Fig. 6 requires the user to construct a `parity.csv` file manually.
-This file is **not provided** in the repository because it depends on
-user-generated quantum chemistry results.
+This file is **not provided** in the repository because it depends on user-generated quantum chemistry results.
 
 The required `parity.csv` must contain **two columns**:
 - `SMD`  

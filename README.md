@@ -19,14 +19,14 @@ This repository contains Python scripts for the combinatorial generation of poly
 
 ## Workflow overview
 
-1. **`aggregate.py` — Data aggregation and electrostatic scaling**
+1. **`scripts/aggregate.py` — Data aggregation and electrostatic scaling**
    - Reads solvent-specific result files (`*_result.csv`)
    - Converts POSS component lists into explicit cage and substituent counts
    - Optionally applies a user-defined scaling factor to electrostatic energy terms (SumEsValues)
    - Produces a unified tabular dataset (`component_quantities<scale>.csv`)
    - Output is suitable for regression, screening, and data-driven modeling
 
-2. **`extract.py` — Interactive ΔG lookup and partition-coefficient calculation**
+2. **`scripts/extract.py` — Interactive ΔG lookup and partition-coefficient calculation**
    - Queries the aggregated dataset for user-defined POSS compositions
    - Returns ΔG values with an empirical correction factor
    - Optionally computes solvent–solvent partition coefficients (log P)
@@ -64,9 +64,10 @@ The aggregation script automatically scans the current directory and processes a
 ## Usage
 
 ### Step 0: Download required input data
-Download all solvent-specific `_result.csv` files from the Google Drive link provided above and place them in the same directory as `aggregate.py`.
+Download all solvent-specific `_result.csv` files from the Google Drive link provided above and place them in the same directory as `scripts/aggregate.py`.
 
 ### Step 1: Aggregate POSS component quantities
+> cd scripts
 > python aggregate.py
 
 ### Step 2: Query the dataset interactively

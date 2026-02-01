@@ -19,7 +19,7 @@ This repository contains Python scripts for the combinatorial generation of poly
 
 ## Workflow overview
 
-1. **`main2.py` — Data aggregation and electrostatic scaling**
+1. **`aggregate.py` — Data aggregation and electrostatic scaling**
    - Reads solvent-specific result files (`*_result.csv`)
    - Converts POSS component lists into explicit cage and substituent counts
    - Optionally applies a user-defined scaling factor to electrostatic energy terms (SumEsValues)

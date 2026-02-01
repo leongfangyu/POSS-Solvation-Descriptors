@@ -13,8 +13,32 @@ The dual nature of Polyhedral Oligomeric Silsesquioxane (POSS), with its cage fr
 
 
 
-## Description
-This repository contains Python scripts for the combinatorial generation of polyhedral oligomeric silsesquioxane (POSS) structures, estimation of their solvation free-energy descriptors (ΔG), and aggregation of results into machine-learning-ready datasets. The workflow enumerates POSS cage–substituent compositions, computes additive energetic descriptors based on pre-tabulated Es and Nes values, and organizes the results for downstream analysis, screening, or data-driven modeling.
+## Technical scope
+
+This repository provides a **Python-based workflow for scientific data
+processing, dataset construction, and visualization** in the context of
+fragment-based solvation free-energy modeling for POSS structures.
+
+The implemented workflows include:
+
+- **High-throughput data aggregation**
+  - Parsing and merging large solvent-specific CSV datasets
+  - Automated feature construction (ΣEs, ΣNes, and scaled ΔG descriptors)
+  - Generation of machine-learning-ready tabular datasets
+
+- **Programmatic dataset generation**
+  - Combinatorial enumeration of POSS cage–substituent compositions
+  - Deterministic construction of descriptor-based datasets across multiple solvents
+  - Structured export for regression, screening, and downstream modeling
+
+- **Scientific data analysis and visualization**
+  - Interactive querying of predicted solvation free energies
+  - Reproduction of validation figures (e.g., parity plots in Fig. 6)
+  - Quantitative comparison between quantum-chemical reference data and model predictions
+
+In addition, the repository includes auxiliary scripts for **post-processing
+Gaussian 16 outputs**, enabling direct integration between quantum-chemistry
+calculations and Python-based data analysis pipelines.
 
 
 ## Workflow overview

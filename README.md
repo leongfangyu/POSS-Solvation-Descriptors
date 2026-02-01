@@ -59,7 +59,7 @@ The aggregation script automatically scans the current directory and processes a
 + openpyxl
 
 ## Installation
-```
+```bash
 pip install pandas openpyxl
 ```
 
@@ -69,14 +69,32 @@ pip install pandas openpyxl
 Download all solvent-specific `_result.csv` files from the Google Drive link provided above and place them in the same directory as `scripts/aggregate.py`.
 
 ### Step 1: Aggregate POSS component quantities
-```
+```bash
 cd scripts
 python aggregate.py
 ```
 
 ### Step 2: Query the dataset interactively
-```
+```bash
 python extract.py
+```
+
+### Step 3 (optional): Reproduce Fig. 6 parity plot (validation)
+Reproducing Fig. 6 requires the user to construct a `parity.csv` file manually.
+This file is **not provided** in the repository because it depends on
+user-generated quantum chemistry results.
+
+The required `parity.csv` must contain **two columns**:
+- `SMD`  
+  Solvation free energies (ΔG<sub>solv</sub>) calculated using **Gaussian 16**
+  with the SMD implicit solvent model. In the associated publication, SMD values were obtained using the keyword:
+  #p m062x/6-31g(d) scrf=(smd,solvent=acetone,read,externaliteration,dovacuum) geom=connectivity
+- `Model`  
+  Predicted ΔG<sub>solv</sub> values obtained from the fragment-based model, extracted using `scripts/extract.py`. Once `parity.csv` has been prepared and placed in the `scripts/` directory, the parity plot can be generated using:
+
+```bash
+cd scripts
+python plot_fig6_parity.py
 ```
 
 > [!NOTE]

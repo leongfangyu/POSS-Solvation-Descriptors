@@ -74,9 +74,10 @@ Download all solvent-specific `_result.csv` files from the Google Drive link pro
 
 
 > [!NOTE]
-> ΔG values are computed using an additive descriptor model.
-> This code does not perform molecular dynamics or quantum calculations.
-> Descriptor values must be supplied by the user.
+> - ΔG values are computed using an additive descriptor model (ΣEs + ΣNes).
+> - An empirical scaling factor (recommended value: **0.75**) can be applied to electrostatic energy contributions based on experimental validation reported in the associated publication.
+> - This code does not perform molecular dynamics or quantum chemistry calculations.
+> - Solvent-specific `_result.csv` files must be downloaded separately before running `aggregate.py`.
 
 ## Citation
 If this work is helpful for your research, please cite [Interaction mechanisms of POSS-based adsorbents with VOCs, CO2, CH4, and H2O: Theoretical insights and prediction method

@@ -59,7 +59,9 @@ The aggregation script automatically scans the current directory and processes a
 + openpyxl
 
 ## Installation
-> pip install pandas openpyxl
+```
+pip install pandas openpyxl
+```
 
 ## Usage
 
@@ -67,12 +69,15 @@ The aggregation script automatically scans the current directory and processes a
 Download all solvent-specific `_result.csv` files from the Google Drive link provided above and place them in the same directory as `scripts/aggregate.py`.
 
 ### Step 1: Aggregate POSS component quantities
-> cd scripts
-> python aggregate.py
+```
+cd scripts
+python aggregate.py
+```
 
 ### Step 2: Query the dataset interactively
-> python extract.py
-
+```
+python extract.py
+```
 
 > [!NOTE]
 > - ΔG values are computed using an additive descriptor model (ΣEs + ΣNes).

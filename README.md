@@ -53,7 +53,7 @@ calculations and Python-based data analysis pipelines.
 2. **`scripts/extract.py` — Interactive ΔG lookup and partition-coefficient calculation**
    - Queries the aggregated dataset for user-defined POSS compositions
    - Returns ΔG values with an empirical correction factor
-   - Optionally computes solvent–solvent partition coefficients (log P)
+   - Optionally computes POSS–solvent partition coefficients (log P)
    - Designed for exploratory and interpretive thermodynamic analysis
 
 3. **`scripts/extract_SMD.sh` — Extraction of SMD results from Gaussian 16 outputs**

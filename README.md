@@ -1,7 +1,7 @@
 
 <div align="center">   
   
-# Interaction mechanisms of POSS-based adsorbents with VOCs, CO2, CH4, and H2O: Theoretical insights and prediction method
+# Interaction mechanisms of POSS-based adsorbents with VOCs, CO<sub>2</sub>, CH<sub>4</sub>, and H<sub>2</sub>O: Theoretical insights and prediction method
 </div>
 
  

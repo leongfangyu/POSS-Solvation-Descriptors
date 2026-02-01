@@ -87,7 +87,7 @@ The required `parity.csv` must contain **two columns**:
 - `SMD`  
   Solvation free energies (ΔG<sub>solv</sub>) calculated using **Gaussian 16**
   with the SMD implicit solvent model. In the associated publication, SMD values were obtained using the keyword:
-  #p m062x/6-31g(d) scrf=(smd,solvent=acetone,read,externaliteration,dovacuum) geom=connectivity
+  #p m062x/6-31g(d) scrf=(smd,solvent=acetone, read, externaliteration,dovacuum) geom=connectivity
 - `Model`  
   Predicted ΔG<sub>solv</sub> values obtained from the fragment-based model, extracted using `scripts/extract.py`. Once `parity.csv` has been prepared and placed in the `scripts/` directory, the parity plot can be generated using:
 
@@ -106,6 +106,31 @@ python plot_fig6_parity.py
 If this work is helpful for your research, please cite [Interaction mechanisms of POSS-based adsorbents with VOCs, CO2, CH4, and H2O: Theoretical insights and prediction method
 ](https://doi.org/10.1016/j.gce.2024.10.009).
 
+
+### Generation of solvent-specific `_result.csv` files (background)
+The solvent-specific result files (`*_result.csv`) used by `scripts/aggregate.py` were generated in a **separate preprocessing step** that is **not included in this repository**. These files were produced using an internal Python workflow together with an Excel file, which contains **SMD-calculated interaction energy descriptors** for individual POSS substituents and cage structures in
+**eight different solvents**. The generation process follows the conceptual steps below:
+1. **Quantum-chemistry-derived descriptor input**  
+   `.xlsx` contains pre-tabulated electrostatic (Es) and non-electrostatic
+   (Nes) interaction energy contributions for:
+   - individual POSS substituents
+   - POSS cage structures (T8, T10, T12)
+   across multiple solvents, obtained from SMD calculations.
+2. **Combinatorial enumeration of POSS structures**  
+   For each POSS cage type (T8, T10, T12), all possible substituent combinations
+   with repetition were enumerated to generate a large library of POSS
+   cage–substituent compositions.
+3. **Additive free-energy estimation**  
+   For each POSS composition and solvent, the solvation free energy (ΔG) was
+   estimated using an additive descriptor model:
+
+   ΔG = ΣEs + ΣNes
+
+   where the summations run over the cage and all substituents in the POSS
+   structure.
+
+5. **Per-solvent result export**  
+   For each solvent, the computed POSS compositions and their corresponding energetic descriptors were written to a separate CSV file in the format: `<solvent>_result.csv` Each file contains: the full list of POSS components, the estimated ΔG value, the summed electrostatic contribution (SumEsValues), and the summed non-electrostatic contribution (SumNesValues). Due to the **large size of the combinatorial dataset** and the dependence on quantum-chemistry-derived input data, the generation script and raw descriptor Excel file are **not distributed in this repository**. Instead, the resulting `*_result.csv` files are provided separately for downstream aggregation, analysis, and validation.
 
 
 ### BibTex

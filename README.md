@@ -53,9 +53,6 @@ Before running `aggregate.py`, users must:
 
 The aggregation script automatically scans the current directory and processes all files matching the pattern `_result.csv`.
 
-
-
-
 ## Requirements
 - Python 3.8 or later
 * pandas
@@ -65,10 +62,14 @@ The aggregation script automatically scans the current directory and processes a
 > pip install pandas openpyxl
 
 ## Usage
-Step 1: Aggregate POSS component quantities
-> python main2.py
 
-Step 3: Query the dataset interactively
+### Step 0: Download required input data
+Download all solvent-specific `_result.csv` files from the Google Drive link provided above and place them in the same directory as `aggregate.py`.
+
+### Step 1: Aggregate POSS component quantities
+> python aggregate.py
+
+### Step 2: Query the dataset interactively
 > python extract.py
 
 

@@ -142,6 +142,29 @@ chmod +x extract_SMD.sh
 ./extract_SMD.sh
 ```
 
+
+### Optional: Extract electronic and thermochemical energies for adsorption analysis
+
+For adsorption or binding-energy calculations based on Gaussian 16 outputs,
+The repository provides a shell script that extracts electronic and
+thermochemical energy components from optimization, single-point, and
+frequency calculations.
+
+The script scans all Gaussian output files (`*.log` and `*.out`) in the current
+directory and extracts:
+
+- final SCF electronic energies
+- zero-point energies (ZPE), when available
+- thermal corrections to energy, enthalpy, and Gibbs free energy
+- summed electronic + thermal energy terms (when frequency calculations are present)
+
+To run the script:
+
+```bash
+cd scripts
+bash extractvf.sh
+```
+
 > [!NOTE]
 > - ΔG values are computed using an additive descriptor model (ΣEs + ΣNes).
 > - An empirical scaling factor (recommended value: **0.75**) can be applied to electrostatic energy contributions based on experimental validation reported in the associated publication.
